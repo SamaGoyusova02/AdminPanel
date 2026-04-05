@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPanel</title>
+    <link href="src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+         .setcircle{
+            animation: rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Aside-->
+   <aside class=" w-full max-w-[250px] h-[91vh] fixed left-0 top-[70px] bg-[#b09bfd] overflow-y-scroll hidden md:block lg:block">
+        <div class="ml-5 mt-10 flex flex-col gap-3">
+            <div>
+                <i class="fa-regular fa-house text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]"><a href="../index.htm">Home Page</a></span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+           <h3 class="text-[1.2em] my-1">Information</h3>
+               <hr class="bg-[#522566] mr-5"/>
+            <div href="pages/articles.htm">
+                <i class="fa-regular fa-newspaper text-xl text-[#522566]"></i>
+                <span  class="ml-2 text-[#522566] font-[500] text-[.9em]"><a href="pages/articles.htm">Articles</a></span>
+            </div>
+                <hr class="bg-[#522566] mr-5"/>
+             <div>
+                <i class="fa-regular fa-file-lines text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">News</span>
+            </div>
+                <hr class="bg-[#522566] mr-5"/>
+             <div>
+                <i class="fa-solid fa-sliders text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]"><a href="pages/slider.htm">Slider</a></span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+            <div>
+                <i class="fa-solid fa-info text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">About</span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+               
+             <h3 class="text-[1.2em] my-1">Sayt Settings</h3>
+               <hr class="bg-[#522566] mr-5"/>
+            <div>
+                <i class="fa-solid fa-gear text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">Setting</span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+            <h3 class="text-[1.2em] my-1">General Settings</h3>
+               <hr class="bg-[#522566] mr-5"/>
+            <div>
+                <i class="fa-regular fa-user text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">User</span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+            <h3 class="text-[1.2em] my-1">Actions</h3>
+               <hr class="bg-[#522566] mr-5"/>
+            <div>
+                <i class="fa-regular fa-circle-user text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">Profile</span>
+            </div>
+             <hr class="bg-[#522566] mr-5"/>
+            <div>
+                <i class="fa-solid fa-arrow-right-from-bracket text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">Logout</span>
+            </div>
+             <hr class="bg-[#522566] mr-5"/>
+        </div>
+    </aside>
+
+     <!--menubar-->
+     <aside id="menubar" class=" w-full h-[100vh] fixed left-[-100%] top-0  bg-[#b09bfd] z-100 opacity-[.9] ">
+        <div onclick="closemenu()" class="flex justify-end pr-3 pt-3"><i class="fa-solid fa-xmark text-2xl text-[#522566]"></i></div>
+        <div class="ml-5 mt-10 flex flex-col gap-3">
+            <div>
+                <i class="fa-regular fa-house text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]"><a href="../index.htm">Home Page</a></span>
+            </div>
+                <hr class="bg-[#522566] mr-5"/>
+             <div>
+                <i class="fa-regular fa-user text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">User</span>
+            </div>
+                <hr class="bg-[#522566] mr-5"/>
+             <div href="pages/articles.htm">
+                <i class="fa-regular fa-newspaper text-xl text-[#522566]"></i>
+                <span href="pages/articles.htm" class="ml-2 text-[#522566] font-[500] text-[.9em]"><a href="pages/articles.htm">Articles</a></span>
+            </div>
+                <hr class="bg-[#522566] mr-5"/>
+             <div>
+                <i class="fa-regular fa-file-lines text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">News</span>
+            </div>
+                <hr class="bg-[#522566] mr-5"/>
+             <div>
+                <i class="fa-solid fa-sliders text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]"><a href="slider.htm">Slider</a></span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+             <div>
+                <i class="fa-solid fa-gear text-xl text-[#522566]"></i>
+                <span class="ml-2 text-[#522566] font-[500] text-[.9em]">Setting</span>
+            </div>
+               <hr class="bg-[#522566] mr-5"/>
+        </div>
+    </aside>
+    <!--Header-->
+    <header class="bg-[#522566] h-[70px] flex justify-between px-3 lg:px-0 lg:justify-around items-center ">
+        <img class="w-[50px] setcircle" src="img/logo.png" alt="logo"/>
+        <ul class="flex gap-7 text-white hidden md:flex lg:flex flex-wrap">
+            <li>Home Page</li>
+            <li>Articles</li>
+            <li>News</li>
+            <li>Slider</li>
+            <li>Settings</li>
+        </ul>
+        <div onclick="openmenu()" class="flex md:hidden lg:hidden"><i class="fa-solid fa-bars text-white  text-2xl"></i></div>
+    </header>
+
+    <script src="app.js"></script>
+</body>
+</html>
